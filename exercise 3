@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module JavaScript</title>
+    <script type="module" src="index.js"></script>
+</head>
+<body>
+    <h1>
+         SELAMAT DATANG !!!
+    </h1>
+</body>
+</html>
+
+// index3.js
+// console.log("module JavaScript");
+//TUTORIAL PERTAMA
+// import {fullName, person, display} from './person.js';
+
+// console.log(fullName, person);
+// display(person); //objectnya person.
+
+//TUTORIAL KEDUA Export AS dan Import AS
+import { 
+    fullName  as namaLengkap, 
+    person as orang, 
+    display as tampil, 
+}   from './person.js';
+
+// import Input from './TextInput/index.js';
+
+import Input, {color} from './TextInput/index.js';
+
+console.log(namaLengkap, orang);
+tampil(orang); //objectnya orang.
+
+Input();
+console.log(color);
+
+// person.js
+//TUTORIAL PERTAMA
+// const fullName = "Giver Panambunan";
+
+// const person = {
+//     firstName: 'Giver',
+//     lastName: 'Panambunan',
+//     age: 21,
+// };
+
+// const display = ({firstName, lastName}) => {
+//     console.log ('Hello ${firstName} ${lastName}');
+// };
+
+// export { fullName, person,  display };
+
+
+//TUTORIAL KEDUA
+const fullName = "John Doe";
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 33,
+};
+
+const display = ({firstName, lastName}) => {
+    console.log ('Hello ${firstName} ${lastName}');
+};
+
+export { fullName, person,  display };
+
+// indexx.js
+export const color = {
+    black: '#000',
+};
+
+const TextInput = () => {
+    console.log('ini adalah Input');
+};
+
+export default TextInput;
